@@ -49,3 +49,11 @@ class AccountSerializer(serializers.ModelSerializer):
         representation.pop("is_active", None)
         representation.pop("is_staff", None)
         return representation
+
+
+class LoginSerializers(serializers.ModelSerializer):
+    email = serializers.CharField(max_length=50)
+
+    class Meta:
+        model = User
+        fields = ["email", "password"]
