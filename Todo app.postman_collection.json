@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "9f968f5e-48a4-4b7d-8888-005252818f0a",
+		"name": "Todo app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27746278"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dipakpawar1@gmail.com\",\r\n    \"first_name\":\"Dipak\",\r\n    \"last_name\":\"Pawar\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/user/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"dipakpawar@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/user/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "get task",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3Njc0NDI4LCJpYXQiOjE2ODc2NzE0MjgsImp0aSI6ImI0ODMyMmMxODNmNTQ5NDNhYzE3MzIxMzEwNmQ3OTQ2IiwidXNlcl9pZCI6OH0.4xxrDSc8IuWiWUiGNmyu-fGWUCy_iMcFzvpPSWqymUA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/task?search=Learn",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"task"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Learn"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3NjM1NDYwLCJpYXQiOjE2ODc2MzI0NjAsImp0aSI6IjEzNTI5NGQ0ZWNiYTQ2YTRhMjQ0YmY4ZjQyNDA2NzYwIiwidXNlcl9pZCI6OX0.9DTaDtk4SaykbNVl3OTiLSTMM_ORLBUj68E23ZY6PLo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"user\": 9,\r\n    \"title\": \"Learn Python\",\r\n    \"is_completed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/task/"
+			},
+			"response": []
+		},
+		{
+			"name": "update Task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3NjczNTY2LCJpYXQiOjE2ODc2NzA1NjYsImp0aSI6IjkzYWEyODVhOWIyOTQwZTA4ZWE1OTVhMWUxMzQ5MTQ4IiwidXNlcl9pZCI6OX0.va0JJJQt0OvyaqrGKK6xBdxmVvgOQADBs1plq7cyWKw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Learn Python from Scratch\",\r\n    \"is_completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/task/2/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3NjczNTY2LCJpYXQiOjE2ODc2NzA1NjYsImp0aSI6IjkzYWEyODVhOWIyOTQwZTA4ZWE1OTVhMWUxMzQ5MTQ4IiwidXNlcl9pZCI6OX0.va0JJJQt0OvyaqrGKK6xBdxmVvgOQADBs1plq7cyWKw",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/task/2/"
+			},
+			"response": []
+		}
+	]
+}
